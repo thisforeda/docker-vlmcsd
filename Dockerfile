@@ -8,7 +8,7 @@ RUN apk update \
     && cd vlmgit \
     && make \
     && chmod +x bin/vlmcsd \
-    && mv bin/vlmcsd /usr/sbin \
+    && mv bin/vlmcsd /usr/bin \
     && cd / \
     && apk del build-base gcc abuild binutils cmake git \
     && rm -rf /vlmgit  \
@@ -16,5 +16,5 @@ RUN apk update \
 
 EXPOSE 1688
 
-CMD ["/usr/sbin/vlmcsd", "-D", "-d", "-t", "3", "-e", "-v"]
+CMD ["/usr/bin/vlmcsd", "-D", "-d", "-t", "3", "-e", "-v"]
 
